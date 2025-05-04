@@ -1,0 +1,73 @@
+/*background 이미지 */
+.head_menu {
+    position: fixed;
+    top: 0%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    background-color: skyblue;
+    width: 100%;
+    padding: 0;
+    background-size: cover;
+    color: white;
+}
+
+h1 {
+    left: 3px;
+    padding: 1%;
+    background-color: black;
+}
+
+.menu_a {
+    display: flex;
+    justify-content: flex-end;
+    width: 600px;
+    height: 70px;
+    list-style: none;
+    background-color: white;
+}
+
+.menu_b {
+    text-align: center;
+    width: 600px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+}
+
+.main_content {
+    position: relative;
+    z-index: 1;
+    top: 110px;
+    display: flex;
+}
+
+aside {
+    position: sticky;
+    width: 100px;
+    background-color: rgb(166, 164, 164);
+}
+
+.main_infromation_card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    list-style: none;
+    width: 1000px;
+}
+
+.information {
+    background-color: skyblue;
+    box-sizing: border-box;
+    border-radius: 5%;
+    margin: 10px;
+    width: 300px;
+    height: 400px;
+    text-align: center;
+}
+
+img {
+    width: 90%;
+    height: 50%;
+    object-fit: cover;
+}
