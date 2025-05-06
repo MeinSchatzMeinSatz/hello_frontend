@@ -3,7 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <title>Number guessing game</title>
+
+    <style>
+        html {
+          font-family: sans-serif;
+        }
+  
+        body {
+          width: 50%;
+          max-width: 800px;
+          min-width: 480px;
+          margin: 0 auto;
+        }
+        
+        .form input[type="number"] {
+          width: 200px;
+        }
+  
+        .lastResult {
+          color: white;
+          padding: 3px;
+        }
+      </style>
 
 </head>
 <body>
@@ -13,7 +36,7 @@
 
     <div class="form">
         <label for="guessField">Enter a guess</label>
-        <input type="number" min="1" max="100" required id="guessField" class="guessfield">
+        <input type="number" min="1" max="100" required id="guessField" class="guessField">
         <input type="submit" value="Submit guess" class="guessSubmit">
     </div>
 
@@ -25,11 +48,12 @@
 
     <script>
         // JavaScript 코드는 여기에 추가하면 됩니다.
-        let randomNumber = Math.floor(Math.random()*100) +1;
-
+        let randomNumber = Math.floor(Math.random() * 100) +1;
         const guesses = document.querySelector(".guesses");
         const lastResult = document.querySelector(".lastResult");
-        const lowOrHi = document.querySelector(".lorOrHi");
+        const lowOrHi = document.querySelector(".lowOrHi");
+
+        console.log(lowOrHi);
 
         const guessSubmit = document.querySelector(".guessSubmit");
         const guessField = document.querySelector(".guessField");
@@ -42,7 +66,8 @@
             if (guessCount === 1) {
                 guesses.textContent = "Previous guesses: ";
             }
-            guesses.textContent += userGuess + " ";
+
+            guesses.textContent = `${guesses.textContent} ${userGuess}`;
 
             if (userGuess === randomNumber) {
                 lastResult.textContent = "Congratulations! You got it right!";
@@ -75,12 +100,12 @@
             guessSubmit.disabled = true;
             resetButton = document.createElement("button");
             resetButton.textContent = "Start new game";
-            document.body.append(resetButton);
+            document.body.appendChild(resetButton);
             resetButton.addEventListener("click", resetGame);
         }
 
         function resetGame() {
-            guessCount = 1;
+            guessCount = 1; 
 
             const resetParas = document.querySelectorAll(".resultParas p");
             for (const resetPara of resetParas) {
