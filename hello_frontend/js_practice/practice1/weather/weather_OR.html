@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather practice</title>
+</head>
+<body>
+    <label for="weather">Select the weather type today: </label>
+    <select id="weather">
+        <option value="">--Make a choice</option>
+        <option value="sunny">☀️Sunny</option>
+        <option value="rainy">☔️Rainy</option>
+        <option value="snowing">⛄️Snowing</option>
+        <option value="overcast">🌫️Overcast</option>
+    </select>
+
+    <p></p>
+
+    <script>
+        //chocie === 'sunny'와 temparature < 86이 오직 true를 리턴해야만 실행될 것입니다.
+        const select = document.querySelector("select");
+        const para = document.querySelector("p");
+
+        select.addEventListener("change", setWeather);
+        
+        function setWeather() {
+            const choice = select.value;
+
+            if (iceCreamVanOutside || houseStatus === "on fire") {
+                console.log("You should leave the house quickly.");
+            } else {
+                console.log("Probably should just stay in then");
+            }
+        }
+    </script>   
+</body>
+</html>
